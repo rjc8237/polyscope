@@ -1,7 +1,9 @@
 if("${POLYSCOPE_BACKEND_OPENGL3_GLFW}")
 
   ## Glad
-  add_subdirectory(glad)
+  if (NOT TARGET glad)
+    add_subdirectory(glad)
+  endif()
 
   ## GLFW
   if (NOT TARGET glfw)
